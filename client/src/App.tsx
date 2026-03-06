@@ -7,7 +7,7 @@ function App(){
   const [result, setResult] = useState("");
 
   const calculate = async (operator: "+" | "-" | "*" | "/") => {
-    const res = await axios.post("http://localhost:5000/api/calculate",
+    const res = await axios.post("https://mern-calculator-i2fm.onrender.com/api/calculate",
       {
         num1:Number(num1),
         num2:Number(num2),
