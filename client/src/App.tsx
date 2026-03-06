@@ -11,7 +11,7 @@ function App(){
       {
         num1:Number(num1),
         num2:Number(num2),
-        operator
+        operation: operator
       }
   );
     setResult(res.data.result);
