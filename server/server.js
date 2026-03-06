@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
     res.send("Calculator API running...");
 });
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 const calculatorRoutes = require("./routes/calculatorRoutes");
 app.use("/api", calculatorRoutes);
