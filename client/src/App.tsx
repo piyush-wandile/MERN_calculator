@@ -7,15 +7,32 @@ function App(){
   const [result, setResult] = useState("");
 
   const calculate = async (operator: "+" | "-" | "*" | "/") => {
-    const res = await axios.post("https://mern-calculator-i2fm.onrender.com/api/calculate",
-      {
-        num1:Number(num1),
-        num2:Number(num2),
-        operation: operator
-      }
-  );
-    setResult(res.data.result);
-};
+    if (!num1 || !num2) {
+      setResult("Error: Please enter both numbers");
+      return;
+    }
+
+    const n1 = Number(num1);
+    const n2 = Number(num2);
+
+    if (isNaN(n1) || isNaN(n2)) {
+      setResult("Error: Please enter valid numbers");
+      return;
+    }
+
+    try {
+      const res = await axios.post("https://mern-calculator-i2fm.onrender.com/api/calculate",
+        {
+          num1: n1,
+          num2: n2,
+          operation: operator
+        }
+      );
+      setResult(res.data.result);
+    } catch (error: any) {
+      setResult("Error: " + (error.response?.data?.error || "Server error"));
+    }
+  };
 return (
   <div
     style={{
