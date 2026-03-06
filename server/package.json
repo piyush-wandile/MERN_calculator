@@ -19,5 +19,14 @@
   "bugs": {
     "url": "https://github.com/piyush-wandile/MERN_calculator/issues"
   },
-  "homepage": "https://github.com/piyush-wandile/MERN_calculator#readme"
+  "homepage": "https://github.com/piyush-wandile/MERN_calculator#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "mongoose": "^9.2.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
 }
